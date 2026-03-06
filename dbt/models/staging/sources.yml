@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: tpch_sample
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1
+    tables:
+      - name: orders
+        description: "Table des commandes"
+        loaded_at_field: o_orderdate
+        config:
+          freshness:
+            warn_after: {count: 24, period: hour}
+            error_after: {count: 48, period: hour}
+
+      - name: lineitem
+        description: "Détail des transactions"
+      - name: customer
+        description: "Table des clients pour l'analyse bancaire"
+        columns:
+          - name: c_custkey
+            tests:
+              - unique
+              - not_null
