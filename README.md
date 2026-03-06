@@ -31,6 +31,8 @@ Nous avons développé un modèle de scoring avancé (`fct_top_profitable_custom
 * **Segmentation métier** : Classification automatique des clients en catégories (`VIP_PROFITABLE`, `RISKY_SPENDER`, `STANDARD`) via des clauses `CASE WHEN`.
 
 ![Schéma Snowflake](./outputs/snowflakedb.png)
+![LineGraph dbt](./outputs/linegraph.png)
+
 
 ## 🚀 Installation et Utilisation
 
